@@ -2,7 +2,7 @@
   "name": "nss_triviabot",
   "version": "1.0.0",
   "description": "A slack integration for NSS 'n Friends trivia group to generate polls",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
