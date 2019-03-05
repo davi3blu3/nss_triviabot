@@ -7,10 +7,15 @@ const app = express();
 // variables
 const PORT = process.env.PORT || 5000;
 
-// web request server
 app
+  // set up server
   .use(express.static(path.join(__dirname, 'public')))
   .set('views', path.join(__dirname, 'views'))
   .set('view engine', 'ejs')
+
+  // handle web requests
   .get('/', (req, res) => res.render('pages/index'))
+  .get('/about', (req, res) => res.render('pages/about'))
+
+  // listen for requests
   .listen(PORT, () => console.log(`Listening on ${PORT}`));
