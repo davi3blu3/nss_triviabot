@@ -20,7 +20,28 @@ module.exports = {
         process.env.team_id +
         process.env.test_channel_webhook,
       {
-        text: 'This is the Day Poll'
+        text: 'This is the Day Poll',
+        attachments: [
+          {
+            text: 'Yay buttons!',
+            fallback: "Buttons aren't working",
+            attachment_type: 'default',
+            actions: [
+              {
+                name: 'yes',
+                text: 'yes',
+                type: 'button',
+                value: 'yes'
+              },
+              {
+                name: 'no',
+                text: 'no',
+                type: 'button',
+                value: 'no'
+              }
+            ]
+          }
+        ]
       }
     );
   },
@@ -32,11 +53,29 @@ module.exports = {
         process.env.team_id +
         process.env.test_channel_webhook,
       {
-        text: 'This is the Venue Poll'
+        text: 'This is the Venue Poll',
+        attachments: [
+          {
+            text: 'Yay buttons!',
+            fallback: "Buttons aren't working",
+            attachment_type: 'default',
+            actions: [
+              {
+                name: 'yes',
+                text: 'yes',
+                type: 'button',
+                value: 'yes'
+              },
+              {
+                name: 'no',
+                text: 'no',
+                type: 'button',
+                value: 'no'
+              }
+            ]
+          }
+        ]
       }
     );
   }
 };
-
-// Local testing
-module.exports.createDayPoll('MTWRF');
