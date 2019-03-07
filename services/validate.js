@@ -1,7 +1,8 @@
 const env = require('../environment/env');
 
 module.exports = {
-  valInitRequest: function(payload) {
+  // validate the initial slash command request by comparing payload credentials
+  initRequest: function(payload) {
     if (payload.command !== env.payloadModel.command) {
       console.log('error: slash command mismatch');
       return false;
