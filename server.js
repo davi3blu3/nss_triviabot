@@ -26,19 +26,18 @@ app
    *API
    */
 
-  // handle slash prompt command initializing trivia request
+  // handle slash command initializing trivia request
   .post('/triviaInit', urlencodedParser, (req, res) => {
+    // check for missing data
     if (!req.body || !req.body.text) {
-      // if request contains no data, return 400 Bad Request
-      return res.sendStatus(400);
-    } else if (!validate.initRequest(req.body)) {
-      // if payload does not match slack team credentials, return 401 Forbidden
-      return res.sendStatus(401);
+      res.status(400).end();
+      // validate slack team credentials
+    } else if (!validate.initRequestIsValid(req.body)) {
+      res.status(403).end('Access forbidden');
     } else {
       // Success condition, continue
-      console.log(req.body);
-      create.poll(req.body.text);
-      return res.sendStatus(200);
+      res.status(200).end();
+      create.poll(req.body);
     }
   })
 

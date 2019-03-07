@@ -1,20 +1,17 @@
 module.exports = {
   // validate the initial slash command request by comparing payload credentials
-  initRequest: function(payload) {
-    if (payload.command !== process.env.slash_command) {
-      console.log('error: slash command mismatch');
-      console.log(payload.command, process.env.slash_command);
+  initRequestIsValid: function(payload) {
+    if (payload.token !== process.env.app_token) {
+      console.log('error: app token mismatch');
       return false;
     } else if (payload.team_id !== process.env.team_id) {
-      console.log('error: team_id mismatch');
-      console.log(payload.team_id, process.env.team_id);
+      console.log('error: team id mismatch');
       return false;
-    } else if (payload.team_domain !== process.env.team_domain) {
-      console.log('error: team_domain mismatch');
-      console.log(payload.team_domain, process.env.team_domain);
+    } else if (payload.command !== process.env.slash_command) {
+      console.log('error: slash command mismatch');
       return false;
     } else {
-      console.log('Slash command for Init request validation: successful!');
+      console.log('initial request: validated');
       return true;
     }
   }
