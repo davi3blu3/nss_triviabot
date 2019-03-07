@@ -7,8 +7,8 @@ module.exports = {
       return createVenuePoll('Thursday');
     } else {
       console.log('problem with request text:', command);
-      console.log(command.slice(0, 2).toUpperCase());
-      console.log(command.slice(0, 4).toUpperCase());
+      console.log(command.slice(0, 3).toUpperCase());
+      console.log(command.slice(0, 5).toUpperCase());
     }
   },
 
