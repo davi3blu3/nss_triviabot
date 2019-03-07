@@ -44,6 +44,7 @@ app
   // handle poll votes
   .post('/vote', urlencodedParser, (req, res) => {
     res.status(200).end();
+    console.log('headers:', req.headers);
     console.log('Payload:', req.body.payload);
     console.log('Payload type:', typeof req.body.payload);
     console.log('Payload is object?', req.body.payload instanceof Object);
