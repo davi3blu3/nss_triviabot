@@ -46,8 +46,8 @@ app
     res.status(200).end();
     console.log('Vote received:');
     console.log(
-      req.body.payload.user.name,
-      'voted for',
+      // req.body.payload.user.name,
+      // 'voted for',
       req.body.payload.actions[0].value
     );
   })
