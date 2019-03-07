@@ -11,6 +11,7 @@ module.exports = {
       console.log('error: team_domain mismatch');
       return false;
     } else {
+      console.log('request validation successful!');
       return true;
     }
   }
