@@ -1,3 +1,13 @@
+const createDayPoll = function(dayString) {
+  console.log('create dayPoll triggered');
+  return dayString;
+},
+
+const createVenuePoll = function(day) {
+  console.log('create venuePoll triggered');
+  return day;
+}
+
 module.exports = {
   poll: function(command) {
     // determine which poll to create
@@ -11,14 +21,4 @@ module.exports = {
       console.log(command.slice(0, 5).toUpperCase());
     }
   },
-
-  createDayPoll: function(dayString) {
-    console.log('create dayPoll triggered');
-    return dayString;
-  },
-
-  createVenuePoll: function(day) {
-    console.log('create venuePoll triggered');
-    return day;
-  }
 };
