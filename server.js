@@ -44,12 +44,8 @@ app
   // handle poll votes
   .post('/vote', urlencodedParser, (req, res) => {
     res.status(200).end();
-    console.log('Vote received:');
-    console.log(
-      // req.body.payload.user.name,
-      // 'voted for',
-      req.body.payload.actions[0].value
-    );
+    console.log('Payload:');
+    console.log(req.body.payload);
   })
 
   // listen for requests
