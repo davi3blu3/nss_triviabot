@@ -20,7 +20,7 @@
   "bugs": {
     "url": "https://github.com/davi3blu3/nss_triviabot/issues"
   },
-  "homepage": "https://github.com/davi3blu3/nss_triviabot#readme",
+  "homepage": "https://immense-bayou-77904.herokuapp.com/",
   "dependencies": {
     "body-parser": "^1.18.3",
     "ejs": "^2.6.1",
