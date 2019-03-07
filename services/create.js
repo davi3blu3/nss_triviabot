@@ -1,9 +1,9 @@
 module.exports = {
   poll: function(command) {
     // determine which poll to create
-    if (command.slice(0, 2).toUpperCase() === 'DAY') {
+    if (command.slice(0, 3).toUpperCase() === 'DAY') {
       return createDayPoll('MTWRF');
-    } else if (command.slice(0, 4).toUpperCase() === 'VENUE') {
+    } else if (command.slice(0, 5).toUpperCase() === 'VENUE') {
       return createVenuePoll('Thursday');
     } else {
       console.log('problem with request text:', command);
