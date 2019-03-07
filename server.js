@@ -30,12 +30,12 @@ app
     if (!req.body) {
       // if request contains no data, return 400 Bad Request
       return res.sendStatus(400);
-    } else if (!validate.initRequest(req.body)) {
-      // if payload does not match slack team credentials, return 401 Forbidden
-      return res.sendStatus(401);
+      // } else if (!validate.initRequest(req.body)) {
+      //   // if payload does not match slack team credentials, return 401 Forbidden
+      //   return res.sendStatus(401);
     } else {
       // determine which poll to create
-      console.log('Request Passed Validation!');
+      console.log(req.body);
       return res.sendStatus(200);
     }
   })

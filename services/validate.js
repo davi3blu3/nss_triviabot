@@ -1,5 +1,3 @@
-const env = require('../environment/env');
-
 module.exports = {
   // validate the initial slash command request by comparing payload credentials
   initRequest: function(payload) {
