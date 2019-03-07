@@ -1,5 +1,5 @@
 module.exports = {
-  poll = function(command) {
+  poll: function(command) {
     // determine which poll to create
     if (command.slice(0, 2).toUpperCase() === 'DAY') {
       return createDayPoll('MTWRF');
@@ -10,13 +10,13 @@ module.exports = {
     }
   },
 
-  createDayPoll = function(dayString) {
+  createDayPoll: function(dayString) {
     console.log('create dayPoll triggered');
     return dayString;
   },
 
-  createVenuePoll = function(day) {
+  createVenuePoll: function(day) {
     console.log('create venuePoll triggered');
     return day;
   }
-}
+};
