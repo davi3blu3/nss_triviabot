@@ -17,5 +17,13 @@ app
   .get('/', (req, res) => res.render('pages/index'))
   .get('/about', (req, res) => res.render('pages/about'))
 
+  // api
+  .get('/createDayPoll', (req, res) => {
+    console.log('request received');
+    res.send(`{
+      json: "data"
+    }`);
+  })
+
   // listen for requests
   .listen(PORT, () => console.log(`Listening on ${PORT}`));
