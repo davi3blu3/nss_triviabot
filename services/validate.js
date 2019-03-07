@@ -14,7 +14,7 @@ module.exports = {
       console.log(payload.team_domain, process.env.team_domain);
       return false;
     } else {
-      console.log('request validation successful!');
+      console.log('Slash command for Init request validation: successful!');
       return true;
     }
   }
