@@ -23,21 +23,40 @@ module.exports = {
         text: 'This is the Day Poll',
         attachments: [
           {
-            text: 'Yay buttons!',
+            text: 'What day should we do trivia this week?',
             fallback: "Buttons aren't working",
+            callback_id: 'day_vote',
             attachment_type: 'default',
             actions: [
               {
-                name: 'yes',
-                text: 'yes',
+                name: 'Monday',
+                text: 'Monday',
                 type: 'button',
-                value: 'yes'
+                value: 'Monday'
               },
               {
-                name: 'no',
-                text: 'no',
+                name: 'Tuesday',
+                text: 'Tuesday',
                 type: 'button',
-                value: 'no'
+                value: 'Tuesday'
+              },
+              {
+                name: 'Wednesday',
+                text: 'Wednesday',
+                type: 'button',
+                value: 'Wednesday'
+              },
+              {
+                name: 'Thursday',
+                text: 'Thursday',
+                type: 'button',
+                value: 'Thursday'
+              },
+              {
+                name: 'Friday',
+                text: 'Friday',
+                type: 'button',
+                value: 'Friday'
               }
             ]
           }
@@ -58,6 +77,7 @@ module.exports = {
           {
             text: 'Yay buttons!',
             fallback: "Buttons aren't working",
+            callback_id: 'venue_vote',
             attachment_type: 'default',
             actions: [
               {

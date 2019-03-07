@@ -27,7 +27,7 @@ app
    */
 
   // handle slash command initializing trivia request
-  .post('/triviaInit', urlencodedParser, (req, res) => {
+  .post('/start_poll', urlencodedParser, (req, res) => {
     // check for missing data
     if (!req.body || !req.body.text) {
       res.status(400).end();
@@ -39,6 +39,13 @@ app
       res.status(200).end();
       create.poll(req.body);
     }
+  })
+
+  // handle poll votes
+  .post('/vote', urlencodedParser, (req, res) => {
+    res.status(200).end();
+    console.log('Vote received:');
+    console.log(req.body);
   })
 
   // listen for requests
