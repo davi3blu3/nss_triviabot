@@ -19,7 +19,7 @@ app
   .get('/about', (req, res) => res.render('pages/about'))
 
   // api
-  .get('/createDayPoll', (req, res) => {
+  .get('/triviaInit', (req, res) => {
     console.log('request received');
     res.send(`{
       json: "data"
@@ -27,7 +27,7 @@ app
   })
 
   // to handle slash prompt command from slack
-  .post('/createDayPoll', urlencodedParser, (req, res) => {
+  .post('/triviaInit', urlencodedParser, (req, res) => {
     if (!req.body) {
       return res.sendStatus(400);
     } else {
