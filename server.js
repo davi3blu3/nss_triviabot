@@ -45,7 +45,7 @@ app
   .post('/vote', urlencodedParser, (req, res) => {
     res.status(200).end();
     console.log('Payload:');
-    console.log(req.body.payload);
+    console.log(req.body.payload.actions);
   })
 
   // listen for requests
