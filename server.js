@@ -6,6 +6,7 @@ const app = express();
 
 // variables
 const PORT = process.env.PORT || 5000;
+const urlencodedParser = bodyParser.urlencoded({ extended: false });
 
 app
   // set up server
@@ -23,6 +24,16 @@ app
     res.send(`{
       json: "data"
     }`);
+  })
+
+  // to handle slash prompt command from slack
+  .post('/createDayPoll', urlencodedParser, (req, res) => {
+    if (!req.body) {
+      return res.sendStatus(400);
+    } else {
+      console.log(req.body);
+      return res.json(req.body);
+    }
   })
 
   // listen for requests
