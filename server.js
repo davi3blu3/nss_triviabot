@@ -44,15 +44,12 @@ app
   // handle poll votes
   .post('/vote', urlencodedParser, (req, res) => {
     res.status(200).end();
-    console.log('headers:', req.headers);
-    console.log('Payload:', req.body.payload);
-    console.log('Payload type:', typeof req.body.payload);
-    console.log('Payload is object?', req.body.payload instanceof Object);
-    console.log(
-      'Payload has actions?',
-      req.body.payload.hasOwnProperty('actions')
-    );
-    console.log('Payload has user?', req.body.payload.hasOwnProperty('user'));
+    const data = JSON.parse(req.body.payload);
+    // console.log('headers:', req.headers);
+    console.log('Payload:', data);
+    console.log('Payload type:', typeof data);
+    console.log('Payload is object?', data instanceof Object);
+    console.log(data.user.name, 'voted for', data.actions[0].value);
   })
 
   // listen for requests
