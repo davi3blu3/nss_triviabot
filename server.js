@@ -44,8 +44,14 @@ app
   // handle poll votes
   .post('/vote', urlencodedParser, (req, res) => {
     res.status(200).end();
-    console.log('Payload:');
-    console.log(req.body.payload.actions);
+    console.log('Payload:', req.body.payload);
+    console.log('Payload type:', typeof req.body.payload);
+    console.log('Payload is object?', req.body.payload instanceof Object);
+    console.log(
+      'Payload has actions?',
+      req.body.payload.hasOwnProperty('actions')
+    );
+    console.log('Payload has user?', req.body.payload.hasOwnProperty('user'));
   })
 
   // listen for requests
