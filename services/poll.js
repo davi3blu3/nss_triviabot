@@ -14,6 +14,27 @@ module.exports = {
     }
   },
 
+  handleVote: function(data) {
+    console.log(data.user.name, 'voted for', data.actions[0].value);
+    pollMessage.attachments.forEach(attachment => {
+      // match attachment representing voted for day
+      if (
+        attachment.title.slice(0, 3).toUpperCase() ===
+        data.actions[0].value.slice(0, 3).toUpperCase()
+      ) {
+        // format based on previous votes recorded
+        if (attachment.text.length > 1) {
+          attachment.text += ', ';
+        }
+        attachment.text += '@' + data.user.name;
+        console.log('vote recorded');
+      } else {
+        console.log('no match - vote invalid');
+      }
+    });
+    axios.post(data.response_url, pollMessage);
+  },
+
   buildDayPoll: function(data) {
     console.log('create dayPoll triggered');
     pollMessage = {

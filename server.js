@@ -45,11 +45,8 @@ app
   .post('/vote', urlencodedParser, (req, res) => {
     res.status(200).end();
     const data = JSON.parse(req.body.payload);
-    // console.log('headers:', req.headers);
     console.log('Payload:', data);
-    console.log('Payload type:', typeof data);
-    console.log('Payload is object?', data instanceof Object);
-    console.log(data.user.name, 'voted for', data.actions[0].value);
+    poll.handleVote(data);
   })
 
   // listen for requests
