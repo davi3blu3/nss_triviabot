@@ -6,7 +6,7 @@ const app = express();
 
 // services
 const validate = require('./services/validate');
-const create = require('./services/create');
+const poll = require('./services/poll');
 
 // variables
 const PORT = process.env.PORT || 5000;
@@ -37,7 +37,7 @@ app
     } else {
       // Success condition, continue
       res.status(200).end();
-      create.poll(req.body);
+      poll.createNew(req.body);
     }
   })
 
